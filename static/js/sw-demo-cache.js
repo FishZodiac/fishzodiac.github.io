@@ -1,11 +1,12 @@
-var VERSION = 'v2';
+var VERSION = 'v3';
 
 // 缓存
 self.addEventListener('install', function(event) {
   event.waitUntil(
     caches.open(VERSION).then(function(cache) {
       return cache.addAll([
-        './static/img/blank.svg',
+        '../img/0.png',
+        '../img/blank.svg'
       ]);
     })
   );
@@ -32,12 +33,11 @@ self.addEventListener('fetch', function(event) {
   event.respondWith(caches.match(event.request).catch(function() {
     return fetch(event.request);
   }).then(function(response) {
-    console.log(caches)
     caches.open(VERSION).then(function(cache) {
       cache.put(event.request, response);
     });
     return response.clone();
   }).catch(function() {
-    return caches.match('./static/img/blank.svg');
+    return caches.match('./static/img/0.png');
   }));
 });
