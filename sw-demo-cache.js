@@ -5,8 +5,8 @@ self.addEventListener('install', function(event) {
   event.waitUntil(
     caches.open(VERSION).then(function(cache) {
       return cache.addAll([
-        '../../index.html',
-        '../img/blank.svg'
+        './index.html',
+        './static/img/blank.svg'
       ]);
     })
   );
@@ -39,6 +39,6 @@ self.addEventListener('fetch', function(event) {
     });
     return response.clone();
   }).catch(function() {
-    return caches.match('./static/img/0.png');
+    return caches.match('./static/img/blank.svg');
   }));
 });
