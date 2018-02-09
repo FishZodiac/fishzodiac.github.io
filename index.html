@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
-	<title>fishzodiac</title>
+	<title>FishZodiac</title>
 	<style>
 		body{
 			margin:0;padding: 0;
@@ -73,13 +73,11 @@
 
 			var loader = new THREE.FontLoader();
 			loader.load( './static/fonts/helvetiker_regular.typeface.json', function ( font ) {
-				var geometry = new THREE.TextGeometry('丸鱼你好', {
-
+				var geometry = new THREE.TextGeometry('FishZodiac', {
 					font: font,
 					size: 20,
 					height: 10,
 					curveSegments: 2
-
 				});
 
 				var materials = [
