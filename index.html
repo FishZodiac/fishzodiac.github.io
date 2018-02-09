@@ -73,7 +73,7 @@
 
 			var loader = new THREE.FontLoader();
 			loader.load( './static/fonts/helvetiker_regular.typeface.json', function ( font ) {
-				var geometry = new THREE.TextGeometry('FishZodiac', {
+				var geometry = new THREE.TextGeometry('BORN', {
 					font: font,
 					size: 20,
 					height: 10,
@@ -86,7 +86,7 @@
 				];
 
 				var mesh = new THREE.Mesh( geometry, materials );
-				mesh.position.x = -50;
+				mesh.position.x = -20;
 				mesh.position.y = 30;
 				mesh.position.z = -25;
 				scene.add( mesh );			
